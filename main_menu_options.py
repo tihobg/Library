@@ -4,7 +4,7 @@ MAIN_MENU_OPTIONS = (
     'Search a book in the TECHNICAL Library',
     'Search a book in the SCIENTIFIC Library',
     'Delete a Book from the TECHNICAL Library',
-    'Delete a Book from the SCIENTIFIC Library '
+    'Delete a Book from the SCIENTIFIC Library',
     'Delete all Books with the same author',
     'Quit'
 )
@@ -13,4 +13,5 @@ LIST_BOOK_NAME_TECH_LIST = []
 LIST_BOOK_NAME_SCIENCE_LIST = []
 LIST_BOOK_AUTHOR_SCIENCE_LIST = []
 LIST_BOOK_AUTHOR_TECH_LIST = []
+LIST_BOOK_OPTIONS = (1, 2, 3, 4, 5, 6, 7, 8)
 

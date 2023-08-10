@@ -49,36 +49,46 @@ class Library:
         return self.book_list_science
 
     def search_book_name_tech(self, d: List):
-        search_book = input('Please enter the name of the technical book\n')
+        search_book = input('Please enter the name of the technical book for searching\n')
         self.book_list_tech = d
+
         for i in range(len(self.book_list_tech)):
             if search_book in self.book_list_tech[i][0]:
                 print('The searching book is:\n')
                 print(self.book_list_tech[i])
+                break
+            else:
+                print('There is no such a book\n')
 
     def search_book_name_science(self, d: List):
-        search_book = input('Please enter the name of the scientific book\n')
+        search_book = input('Please enter the name of the scientific book for searching\n')
         self.book_list_science = d
         for i in range(len(self.book_list_science)):
             if search_book in self.book_list_science[i][0]:
                 print('The searching book is:\n')
                 print(self.book_list_science[i])
+                break
+            else:
+                print('There is no such a book\n')
 
     def search_book_author_tech(self, d: List):
-        search_book = input('Please enter the author of the tech book\n')
+        search_book = input('Please enter the author of the tech book for searching\n')
         self.book_list_tech = d
         new_book_list_tech = []
         for i in range(len(self.book_list_tech)):
             if search_book in self.book_list_tech[i][1]:
                 print('The searching book is:\n')
                 print(self.book_list_tech[i])
+                # new_book_list_tech.append(self.book_list_tech[i])
+
             else:
+                # print('There is no such books to delete')
                 new_book_list_tech.append(self.book_list_tech[i])
         print(new_book_list_tech)
         return new_book_list_tech
 
     def search_book_author_science(self, d: List):
-        search_book = input('Please enter the author of the science book\n')
+        search_book = input('Please enter the author of the science book for searching\n')
         self.book_list_science = d
         new_book_list_science = []
         for i in range(len(self.book_list_science)):
@@ -94,25 +104,31 @@ class Library:
         pass
 
     def delete_tech_book(self, d: List):
-        search_book = input('Please enter the name of the technical book\n')
+        search_book = input('Please enter the name of the technical book to delete\n')
         self.book_list_tech = d
-        del_index = 0
+        del_index = -1
         for i in range(len(self.book_list_tech)):
             if search_book in self.book_list_tech[i][0]:
                 print('The searching book is:\n')
                 print(self.book_list_tech[i])
                 del_index = i
-        self.book_list_tech.pop(del_index)
+            else:
+                print('There is no such a book to delete\n')
+        if del_index != -1:
+            self.book_list_tech.pop(del_index)
         print(self.book_list_tech)
 
     def delete_science_book(self, d: List):
-        search_book = input('Please enter the name of the science book\n')
+        search_book = input('Please enter the name of the science book to delete\n')
         self.book_list_science = d
-        del_index = 0
+        del_index = -1
         for i in range(len(self.book_list_science)):
             if search_book in self.book_list_science[i][0]:
                 print('The searching book is:\n')
                 print(self.book_list_science[i])
                 del_index = i
-        self.book_list_science.pop(del_index)
+            else:
+                print('There is no such a book to delete')
+        if del_index != -1:
+            self.book_list_science.pop(del_index)
         print(self.book_list_science)
